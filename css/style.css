@@ -9,17 +9,20 @@ body {
     background-image: url("../images/concrete_seamless.png");
 }
 
+/* animation - growing from 25px to 475 px using keyframes */
 @keyframes hw5_move{
     from {width: 25px; opacity: 0;}
     to {width: 475px; opacity: 1;}
 }
 
+/* makes header tag match flex model */
 header{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* styling header elements that are direct children of .card */
 .card > header{
     background: #288088;
     border: solid 2px #45ADAD;
@@ -31,6 +34,7 @@ div .card{
     border-radius: 50px 50px 0px 0px;
 }
 
+/* links stay the same color even after they have been visited*/ 
 nav a:visited{
     color: blue;
 }
@@ -41,6 +45,7 @@ nav a:visited{
     flex-basis: 450px;
 }
 
+/* matching .pricing formatting to flex (horizontal and vertical)/example screenshots */
 .pricing{
     display: flex;
     flex-direction: column;
@@ -54,12 +59,14 @@ nav a:visited{
     width: 300px;
 }
 
+/* matching .gallery formatting to flex/example screenshots */
 .gallery{
     display: inline-flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+/* for when screen sizes are at least 900px */
 @media screen and (min-width: 900px){
     header{
         display: flex;
@@ -77,6 +84,7 @@ nav a:visited{
         align-self: center;
     }
     
+    /* keeps header at the top of the page when scrolling*/
     body > header{
         position: sticky;
         top: 0px;
@@ -84,12 +92,14 @@ nav a:visited{
     }
 }
 
+/* for users that prefer reduced motion, thus limiting the animation when this preference is selected*/
 @media (prefers-reduced-motion: reduce){
     .logo{
         animation: none;
     }
 }
 
+/* specifications when printing in portrait mode as the website differs from its original format (when not in print)*/
 @media print{
     body{
         font-family: Arial, Helvetica;
@@ -106,6 +116,7 @@ nav a:visited{
 
     }
 
+    /* align pricing to match up on each card for print view */
     .pricing{
         display: flex;
         align-items: flex-end;
@@ -118,10 +129,12 @@ nav a:visited{
         border: solid #45addd 2px;
     }
 
+    /* adding the thumbs up emoji to the .card class for the first line after the package title*/
     .card li:nth-child(2)::after{
         content: "\1F44D";
     }
 
+    /* make #gallery and .gallery no longer visible*/
     #gallery{
         visibility: hidden;
     }
